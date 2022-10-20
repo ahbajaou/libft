@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 04:45:39 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/17 05:40:46 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/20 04:56:11 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,20 @@ int count_words(char *str, char c)
 
     count = 0;
     i = 0;
-    while (str[i] == c)
-        i++;
     while (str[i])
     {
-        if (str[i] == c && str[i + 1] != c)
+        if ((str[i] != c && str[i + 1] == c)
+            || (str[i] != c && str[i + 1] == '\0'))
             count++; 
         i++;
     }
-    return (count + 1);
+    return (count);
 }
 int alloc_words(char *str,char c,int b)
 {
     int g;
-    int i;
 
     g = 0;
-    i = b;
     while (str[b] && str[b] != c)
     {
         g++;
@@ -52,7 +49,7 @@ char **ft_split(char *str, char c)
 
     i = 0;
     j = 0;
-    spl = malloc(sizeof(char *) * count_words(str, c));
+    spl = malloc(sizeof(char *) * count_words(str, c) + 1);
     if(!spl)
         return (NULL);
     while(str[i])
@@ -61,7 +58,7 @@ char **ft_split(char *str, char c)
             i++;
         if(str[i] == '\0')
             break;
-        spl[j] = malloc(sizeof(char ) *alloc_words(str, c, i));
+        spl[j] = malloc(sizeof(char ) * alloc_words(str, c, i) + 1);
         if(!spl[j])
             return(NULL);
         h = 0;
@@ -73,15 +70,18 @@ char **ft_split(char *str, char c)
         }
         spl[j][h] = '\0';
         j++;
-        i++;
     }
     spl[j] = NULL;
     return(spl);
 }
 
-int main()
-{
-    char **str = ft_split(NULL, '+');
-    for(int i = 0; str[i]; i++)
-        printf("{%s}\n", str[i]);
-}
+// int main()
+// {
+//     char **str = ft_split("      amed mde +bj     ", ' ');
+//     int i = 0;
+//     while (str[i])
+//     {
+//         printf(">>%s\n", str[i]);
+//         i++;
+//     }
+// }

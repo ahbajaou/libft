@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 03:13:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 21:42:59 by ahbajaou         ###   ########.fr       */
+/*   Created: 2022/10/18 21:03:05 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/19 03:14:16 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char f(unsigned int x,char s)
 {
-    unsigned int i;
-    char *new;
+    (void)x;
+    return s;
+}
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+    int i;
+    char *s1;
 
     i = 0;
-    if (start >= ft_strlen((char *)s))
-        len = 0;
-    while (i < len && s[i])
-        i++;
-    new = malloc (i + 1);
-    if (!new)
+    if (s == NULL)
         return (NULL);
-    i = 0;
-    while (s[i] && i < len)
+    s1 = malloc(sizeof (char) * ft_strlen((char *)s) + 1);
+    if(s1 == NULL)
+        return (NULL);
+    while (s1[i])
     {
-        new[i] = s[start];
+        s1[i] = (*f)(i,s[i]);
         i++;
-        start++;
     }
-    new[i] = '\0';
-    return (new);
+    s1[i] = '\0';
+    return (s1);
 }
-// int main()
-// {
-//     printf("%s\n",ft_substr("ahmedmedbj",4,7));
-// }

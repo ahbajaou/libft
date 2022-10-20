@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/19 01:56:07 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/19 01:59:18 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 int ft_isprint(int c)
 {
@@ -7,15 +19,3 @@ int ft_isprint(int c)
     }
     return (0);
 }
-// int main()
-// {
-//     /*int cha;
-//     int p;
-//     cha = '&';
-//     p = ft_isprint('4');
-//     printf("%d",p);*/
-// 	char *str = "hello";
-// 	printf("%d\n", *str);
-// 	str++;
-// 	printf("%d\n", *str);
-// }

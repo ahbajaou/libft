@@ -1,24 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/19 01:38:02 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/20 02:25:10 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-void  ft_bzero(void *s, size_t n)
+
+void	ft_bzero(void *s, size_t n)
+
 {
-    if (n == 0)
-        return ;
-    char *tr = (char *)s;
-    size_t i;
-    i = 0;
-    int c;
-    c = '\0';
-    while (i < n)
-    {
-        tr[i] = c;
-        i++;
-    }
+	int		c;
+	char	*tr;
+	size_t	i;
+
+	i = 0;
+	tr = NULL;
+	c = '\0';
+	if (n == 0)
+		return ;
+	tr = (char *)s;
+	while (i < n)
+	{
+		tr[i] = c;
+		i++;
+	}
 }
-// int main()
-// {
-//     char s[] = "ahmed";
-//     ft_bzero(s,0);
-//     printf("(%s)\n",s);
-//     bzero(s,0);
-//     printf("(%s)\n",s);
-// }

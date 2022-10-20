@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 05:30:55 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/17 05:39:35 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/17 21:38:11 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	check_words(char *str,char *s1)
 	while (str[i])
 	{
 	    if(ft_check_char(s1, str[i]) == 0)
-	        lent++;
+	        {
+				lent++;
+			}
 	    i++;
 	}
 	return(lent + 1);

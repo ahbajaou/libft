@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:34:48 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/17 23:34:55 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/19 03:27:17 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char *ft_itoa(int n)
     new[j] = '\0';
     return (new);
 }
-int main()
-{
-    printf("%s\n",ft_itoa(1337));
-}
+// int main()
+// {
+//     printf("%s\n",ft_itoa(1337));
+// }

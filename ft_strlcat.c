@@ -4,29 +4,31 @@
  {
     size_t i;
     size_t j;
-    int c;
-    char *dt;
+    size_t  l;
+    size_t c;
     char *sc;
 
-    dt = (char *)dst;
     sc = (char *)src;
     i = 0;
-    j = 0;
-    c = ft_strlen(dt);
-    while (sc[j] && j < z - 1)
-    {
-        sc[i] = dt[j];
-        i++;
-        j++;
-    }
-    return (c + i);
+    c = ft_strlen(dst);
+    j = ft_strlen(sc);
+    l = c;
+    if (j == 0 && z == 0)
+        return (0);
+    if (z == 0)
+        return (j);
+    while (sc[i] && c < z - 1)
+        dst[c++] = sc[i++];
+    return (l + j);
  }
-//  int    main()
-//  {
-//     char dt [10] = "bahemqan";
-//     char sc [] = "edbj";
-//     printf("%lu\n",ft_strlcat(dt,sc,10));
-//     char dst [10] = "bahemqan";
-//     char src [] = "edbj";
-//     printf("%lu\n",strlcat(dst,src,10));
-//  }
+
+// int main()
+// {
+//     char dst [10] = "";
+//     char src [] = "";
+//     printf("dyali : %zu\n",ft_strlcat(dst,src,5));
+//     char dst1 [10] = "";
+//     char src1 [] = "";
+//     printf("dyalhom : %zu\n",strlcat(dst1,src1,5));
+//     return (0);
+// }
