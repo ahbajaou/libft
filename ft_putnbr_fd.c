@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 18:21:21 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/24 23:40:25 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "libft.h"
 void ft_count(int n ,int fd)
 {
-    int nb;
-    int i;
+    long int nb;
+    long int i;
 
     nb = n;
     i = 1;
@@ -26,20 +38,23 @@ void ft_putnbr_fd(int n, int fd)
     int min;
 
     nb = n;
-    min = -2147483647;
+    min = -2147483648;
     if (nb == min)
         {
-            ft_putchar_fd(min,fd);
+            ft_putstr_fd("-2147483648",fd);
+            return ;
         }
     else 
     {
-        if (nb < 0) 
+        if (nb < 0)
+        {
             ft_putchar_fd('-',fd);
             nb *= -1;
+        }
     }
     ft_count(nb,fd);
 }
 // int main()
 // {
-//     ft_putnbr_fd(-214747,1);
+//     ft_putnbr_fd(-2147483648,0);
 // }

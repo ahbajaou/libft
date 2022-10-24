@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:19:08 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 01:36:33 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 03:51:51 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ int ft_atoi(const char *str)
 // int main()
 // {
 //     printf("%d\n", ft_atoi("2147483648"));
+//      printf("%d\n", atoi("2147483648"));
 // }

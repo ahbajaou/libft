@@ -6,22 +6,23 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:34:48 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 03:27:17 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 22:50:37 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
+
 char *ft_itoa(int n)
 {
-    int i;
-    int tmp;
-    int lent;
-    int j;
+    long int i;
+    long int lent;
+    long int j;
+    long int tmp;
     char *new;
 
-    tmp = n;
     j = 0;
     i = 1;
+    tmp = n;
     lent = 1;
     if (tmp < 0)
         tmp *= -1;
@@ -34,17 +35,21 @@ char *ft_itoa(int n)
     if (n < 0)
     {
         lent++;
-        new = malloc(sizeof(char) * lent);
+        new = malloc(sizeof(char) * lent + 1);
+            if (!new)
+                return (NULL);
     }
     else    
-        new = malloc(sizeof(char) * lent);
-    if(new == NULL)
-        return (NULL);
+        new = malloc(sizeof(char) * lent + 1);
+        if(!new)
+            return (NULL);
     if (n < 0)
     {
         new[0] = '-';
         j++;
         n *= -1;
+        if ( n == -2147483648)
+             return (ft_strdup((char *)"-2147483648"));
     }
     while (lent > j)
     {
@@ -58,5 +63,5 @@ char *ft_itoa(int n)
 }
 // int main()
 // {
-//     printf("%s\n",ft_itoa(1337));
+//     printf("%s\n",ft_itoa(2147483648));
 // }

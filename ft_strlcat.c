@@ -1,34 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/22 00:15:20 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/22 15:59:48 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
- size_t ft_strlcat(char *dst, const char *src, size_t z)
- {
-    size_t i;
-    size_t j;
-    size_t  l;
-    size_t c;
-    char *sc;
+size_t	ft_strlcat(char *dst, const char *src, size_t z)
 
-    sc = (char *)src;
-    i = 0;
-    c = ft_strlen(dst);
-    j = ft_strlen(sc);
-    l = c;
-    if (j == 0 && z == 0)
-        return (0);
-    if (z == 0)
-        return (j);
-    while (sc[i] && c < z - 1)
-        dst[c++] = sc[i++];
-    return (l + j);
- }
+{
+	size_t	i;
+	size_t	x;
+	size_t	j;
 
-// int main()
-// {
-//     char dst [10] = "";
-//     char src [] = "";
-//     printf("dyali : %zu\n",ft_strlcat(dst,src,5));
-//     char dst1 [10] = "";
-//     char src1 [] = "";
-//     printf("dyalhom : %zu\n",strlcat(dst1,src1,5));
-//     return (0);
-// }
+	i = 0;
+	x = ft_strlen(src);
+	if (!dst || (!dst && z == 0))
+		return (ft_strlen(src));
+	j = ft_strlen(dst);
+	if (z < j)
+		return (x + z);
+	while (src[i] && (i + j) < z - 1)
+	{
+		dst[j + i] = src[i];
+		i++;
+	}
+	dst[j + i] = '\0';
+	return (x + j);
+}

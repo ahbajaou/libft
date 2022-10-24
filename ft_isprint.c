@@ -6,16 +6,17 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:07 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 01:59:18 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:41:04 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isprint(int c)
+
+int	ft_isprint(int c)
 {
-    if (c >= 33 && c <= 126)
-    {
-        return (1);
-    }
-    return (0);
+	if (c >= 32 && c <= 126)
+	{
+		return (1);
+	}
+	return (0);
 }

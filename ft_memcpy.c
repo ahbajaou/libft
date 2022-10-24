@@ -6,36 +6,34 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:19:19 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/20 02:38:34 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:46:36 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
-{
-    unsigned char *dt;
-    unsigned char *sc;
-    size_t i;
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 
-    i = 0;
-    dt = (unsigned char *)dst;
-    sc = (unsigned char *)src;
+{
+	unsigned char	*dt;
+	unsigned char	*sc;
+	size_t			i;
+	size_t			j;
+
+	i = 0;
+	j = 0;
+	dt = (unsigned char *)dst;
+	sc = (unsigned char *)src;
 	if (n == 0)
 		return (dt);
-    while (sc[i] && i < n - 1)
-    {
-        dt[i] = sc[i];
-        i++;
-    }
-    return(dt);
+	if (dt == 0 && sc == 0)
+		return (0);
+	while (sc[i] && i < n - 1)
+	{
+		dt[j] = sc[i];
+		i++;
+		j++;
+	}
+	dt[j] = sc[i];
+	return (dt);
 }
-// int main()
-// {
-// 	char dst [] = "ahmed";
-// 	char src [] = "nj99";
-// 	printf("%s\n",ft_memcpy(dst,src,2));
-// 	char dst1 [] = "ahmed";
-// 	char src1 [] = "nj99";
-// 	printf("%s\n",memcpy(dst1,src1,2));
-// }

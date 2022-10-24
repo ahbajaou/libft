@@ -6,11 +6,12 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 05:30:55 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/17 21:38:11 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:43:13 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_check_char(char *str,char c)
 {
 	int	i;
@@ -24,45 +25,38 @@ int	ft_check_char(char *str,char c)
 	}
 	return (0);
 }
-int	check_words(char *str,char *s1)
-{
-	int	i;
-	int	lent;
-
-	i = 0;
-	lent = 0;
-	while (str[i])
-	{
-	    if(ft_check_char(s1, str[i]) == 0)
-	        {
-				lent++;
-			}
-	    i++;
-	}
-	return(lent + 1);
-}
 char    *ft_strtrim(char const *s1, char const *set)
 {
-    char *end;
-    int i = 0;
-    int j = 0;
-    
-    end = malloc(sizeof(char) * (ft_chech_words((char *)s1, (char *)set) + 1));
-    if(!end)
-        return(NULL);
-    while(s1[i])
-    {
-        if(ft_check_char((char *)set, s1[i]) == 0)
-        {
-            end[j] = (char)s1[i];
-            j++;
-        }
-        i++;
-    }
-    end[j] = '\0';
-    return(end);
+    char *str;
+	char *sep;
+	int i;
+	int j;
+
+	str = (char *)s1;
+	sep = (char *)set;
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (ft_check_char(&str[i],set[j]) == 0)
+		{
+			break;
+		}
+		i++;
+	}
+	i -= 1;
+	while (str[i])
+	{
+		if (ft_check_char(&str[i],set[j]) == 0)
+		{
+			break;
+		}
+		i--;
+	}
+	return (&str[i]);
+
 }
-// int main()
-// {
-//     printf("{%s}\n", ft_strtrim("achraf", "af"));
-// }
+int main()
+{
+    printf("{%s}\n", ft_strtrim("   amed  rabia  ", " "));
+}

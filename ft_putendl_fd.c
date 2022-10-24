@@ -1,18 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 05:17:36 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/24 05:23:51 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
-{
-    int i;
+void	ft_putendl_fd(char *s, int fd)
 
-    i = 0;
-    while (s[i])
-    {
-        write(fd , &s[i], 1);
-        i++;
-    }
-    write(fd, "\n", 1);
-}
-int main()
 {
-    ft_putendl_fd("ahmed",1);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

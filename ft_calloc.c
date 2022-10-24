@@ -6,24 +6,18 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:38:41 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 01:39:02 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 23:50:12 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-  void *ft_calloc(size_t ct, size_t sz)
+void  *ft_calloc(size_t ct, size_t sz)
 {
-  size_t i;
-  i = 0;
-  int *pt;
-  pt = (int *)calloc (ct , sizeof(int));
+  char *pt;
+  pt = malloc (ct * sz);
   if (!pt)
     return (NULL);
-  while (i < ct && i < sz)
-  {
-    pt[i] = i;
-    i++;
-  }
+  ft_bzero(pt, ct * sz);
   return (pt);
 }
