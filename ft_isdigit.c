@@ -6,17 +6,17 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:54:29 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/19 01:55:11 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/25 21:30:50 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int nb)
+int	ft_isdigit(int nb)
 {
-        if (nb >= '0' && nb <= '9')
-        {
-            return (1);
-        }
-        return (0);
+	if (nb >= '0' && nb <= '9')
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 23:21:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/23 16:56:08 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:38:21 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,9 @@ char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 	}
 	return (NULL);
 }
+// int	main()
+// {
+// 	char str [] = "ahmad med 1337";
+// 	char to [] = "med";
+// 	printf("%s\n",ft_strnstr(str,to,11));
+// }

@@ -1,33 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 21:55:18 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/10/26 23:27:42 by ahbajaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-char *ft_strrchr(const char *str, int c)
+
+char	*ft_strrchr(const char *str, int c)
 {
-    int len;
-    int i;
+	int		i;
+	char	*new;
 
-    i = 0;
-    len = 0;
-    if (str[0] == '\0')
-        return (NULL);
-    if (c == '\0')
-        return ("");
-    while (str[i])
-        i++;
-    i -= 1;
-    while (str[i])
-    {
-        if (str[i] == c)
-        {
-            return ((char *)&str[i]);
-        }
-        i--;
-    }
-    return (NULL);
+	new = (char *)str;
+	if (c == 0)
+		return (new + ft_strlen(new));
+	i = ft_strlen(new);
+	while (i >= 0)
+	{
+		if (new[i] == (char)c)
+			return (&new[i]);
+		i--;
+	}
+	return (0);
 }
-// int main()
-// {
-//     char *str = "ahmeed";
-//     int c = '\0';
-//     printf("%s\n",strrchr("ahmeed",'\0'));
-//     printf("%s\n",ft_strrchr(str,c));
-
-// }
