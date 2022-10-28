@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 04:45:39 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/26 19:35:57 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/28 01:20:33 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,12 @@ int	alloc_words(char *str, char c, int b)
 	return (g);
 }
 
-char	**ft_split(char *str, char c)
+char	**part_two(char **spl, char *str, char c, int i)
 {
-	char	**spl;
-	int		i;
 	int		j;
 	int		h;
 
-	i = 0;
 	j = 0;
-	spl = malloc(sizeof(char *) * count_words(str, c) + 1);
-	if (!spl)
-		return (NULL);
 	while (str[i])
 	{
 		while (str[i] && str[i] == c)
@@ -76,3 +70,26 @@ char	**ft_split(char *str, char c)
 	spl[j] = NULL;
 	return (spl);
 }
+
+char	**ft_split(char *str, char c)
+{
+	char	**spl;
+	int		i;
+
+	i = 0;
+	spl = malloc(sizeof(char *) * count_words(str, c) + 1);
+	if (!spl)
+		return (NULL);
+	part_two(spl, str, c, i);
+	return (spl);
+}
+// int	main()
+// {
+// 	char **tab = ft_split("ahmed dpk med",' ');
+// 	int i = 0;
+// 	while (tab[i])
+// 	{
+// 		printf("%s\n",tab[i]);
+// 		i++;
+// 	}
+// }

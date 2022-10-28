@@ -6,13 +6,13 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:34:48 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/27 01:12:27 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:47:07 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*put_in_str(int j, int i, long nb)
+char	*part_itoa(int j, int i, long nb)
 {
 	char	*str;
 
@@ -59,5 +59,5 @@ char	*ft_itoa(int n)
 		j *= 10;
 		i++;
 	}
-	return (put_in_str(j, i, nb));
+	return (part_itoa(j, i, nb));
 }

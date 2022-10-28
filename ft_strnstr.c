@@ -6,20 +6,38 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 23:21:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:21 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:30:34 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str1, const char *str2, size_t len)
+char	*part_2(char *s1, char *s2, size_t i, size_t len)
+{
+	size_t	j;
 
+	while (s1[i] && i < len)
+	{
+		j = 0;
+		if (s1[i] == s2[j])
+		{
+			while (s2[j] && s2[j] == s1[i + j] && i + j < len)
+			{
+				if (s2[j + 1] == '\0')
+					return (&s1[i]);
+				j++;
+			}
+		}
+		i++;
+	}
+	return (NULL);
+}
+
+char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	char	*s1;
 	char	*s2;
-	int		x;
 
 	s1 = (char *)str1;
 	s2 = (char *)str2;
@@ -28,28 +46,5 @@ char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 		return (s1);
 	if (s1[0] == '\0' || len == 0)
 		return (NULL);
-	while (s1[i] && i < len)
-	{
-		j = 0;
-		if (s1[i] == s2[j])
-		{
-			x = i;
-			while (s2[j] == s1[i] && s2[j] != '\0')
-			{
-				j++;
-				i++;
-			}
-			if (j != ft_strlen((char *)s2))
-				return (NULL);
-			return (&s1[x]);
-		}
-		i++;
-	}
-	return (NULL);
+	return (part_2(s1, s2, i, len));
 }
-// int	main()
-// {
-// 	char str [] = "ahmad med 1337";
-// 	char to [] = "med";
-// 	printf("%s\n",ft_strnstr(str,to,11));
-// }

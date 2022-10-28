@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 03:13:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/23 17:42:39 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:43:31 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*new;
 
 	i = 0;
-	if (start >= ft_strlen((char *)s))
+	if (start > ft_strlen((char *)s))
 		len = 0;
 	while (i < len && s[i])
 		i++;
