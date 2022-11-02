@@ -5,91 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 04:45:39 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/28 01:20:33 by ahbajaou         ###   ########.fr       */
+/*   Created: 2022/10/28 02:22:58 by ahbajaou          #+#    #+#             */
+/*   Updated: 2022/11/01 00:56:35 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *str, char c)
+int	count_c(const char *str, char c, int i)
 {
-	int	i;
 	int	count;
 
 	count = 0;
-	i = 0;
 	while (str[i])
 	{
-		if ((str[i] != c && str[i + 1] == c) \
-			|| (str[i] != c && str[i + 1] == '\0'))
-				count++;
+		if (str[i] == c)
+			break ;
+		count++;
 		i++;
 	}
 	return (count);
 }
 
-int	alloc_words(char *str, char c, int b)
+int	count_word(const char *str, char c)
 {
-	int	g;
-
-	g = 0;
-	while (str[b] && str[b] != c)
-	{
-		g++;
-		b++;
-	}
-	return (g);
-}
-
-char	**part_two(char **spl, char *str, char c, int i)
-{
-	int		j;
-	int		h;
-
-	j = 0;
-	while (str[i])
-	{
-		while (str[i] && str[i] == c)
-			i++;
-		if (str[i] == '\0')
-			break ;
-		spl[j] = malloc(sizeof(char ) * alloc_words(str, c, i) + 1);
-		if (!spl[j])
-			return (NULL);
-		h = 0;
-		while (str[i] && str[i] != c)
-		{
-			spl[j][h] = str[i];
-			i++;
-			h++;
-		}
-		spl[j][h] = '\0';
-		j++;
-	}
-	spl[j] = NULL;
-	return (spl);
-}
-
-char	**ft_split(char *str, char c)
-{
-	char	**spl;
-	int		i;
+	int	i;
+	int	wd;
 
 	i = 0;
-	spl = malloc(sizeof(char *) * count_words(str, c) + 1);
+	wd = 0;
+	while (str[i])
+	{
+		if ((str[i] != c && str[i + 1] == c)
+			|| (str[i] != c && str[i + 1] == '\0'))
+			wd++;
+		i++;
+	}
+	return (wd);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	int		i;
+	int		sp;
+	int		xc;
+	char	**spl;
+	int		x;
+
+	sp = 0;
+	i = 0;
+	xc = count_word(s, c);
+	spl = malloc(sizeof(char *) * (xc + 1));
 	if (!spl)
 		return (NULL);
-	part_two(spl, str, c, i);
+	while (i < xc)
+	{
+		while (s[sp] && s[sp] == c)
+			sp++;
+		x = count_c(s, c, sp);
+		spl[i] = ft_substr(s, sp, x);
+		sp += x + 1;
+		i++;
+	}
+	spl[i] = NULL;
 	return (spl);
 }
-// int	main()
-// {
-// 	char **tab = ft_split("ahmed dpk med",' ');
-// 	int i = 0;
-// 	while (tab[i])
-// 	{
-// 		printf("%s\n",tab[i]);
-// 		i++;
-// 	}
-// }

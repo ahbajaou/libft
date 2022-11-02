@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 00:15:20 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/22 15:59:48 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/11/01 02:16:39 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t z)
 
 	i = 0;
 	x = ft_strlen(src);
-	if (!dst || (!dst && z == 0))
+	if (z == 0)
 		return (ft_strlen(src));
 	j = ft_strlen(dst);
 	if (z < j)

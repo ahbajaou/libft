@@ -6,14 +6,13 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:38:02 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/20 02:25:10 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/11/01 20:13:22 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
-
 {
 	int		c;
 	char	*tr;

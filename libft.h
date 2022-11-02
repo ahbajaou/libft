@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:39:02 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/26 00:45:44 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/11/02 02:50:45 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <ctype.h>
+# include <fcntl.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -52,6 +53,6 @@ void	ft_putendl_fd(char *s, int fd);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t z);
-char	**ft_split(char *str, char c);
+char	**ft_split(char const *s, char c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 19:35:04 by ahbajaou          #+#    #+#              #
-#    Updated: 2022/10/27 21:17:40 by ahbajaou         ###   ########.fr        #
+#    Updated: 2022/11/02 02:50:40 by ahbajaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 	
 $(OBJS):
-	$(CC) $(FLAGS) $(SRC) $(ARG)
+	$(CC) $(FLAGS) $(SRC) $(ARG) 
 
 clean : 
 	rm -f $(OBJS)

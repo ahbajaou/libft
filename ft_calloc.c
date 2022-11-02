@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:38:41 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/25 20:27:41 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:00:10 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t ct, size_t sz)
 {
-	char	*pt;
+	void	*pt;
 
 	pt = malloc (ct * sz);
 	if (!pt)

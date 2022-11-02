@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:37:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2022/10/27 16:14:57 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:20:00 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
-	i++;
+		i++;
 	return (i);
 }
